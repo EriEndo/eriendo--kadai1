@@ -1,0 +1,68 @@
+header {
+    background-color: #fff;
+    font-family: "Georgia", serif;
+}
+
+.header__inner {
+    margin: 0 auto;
+    padding: 20px 15px;
+    max-width: 1230px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.header__logo {
+    color: #aba197;
+    text-decoration: none;
+    font-size: 32px;
+}
+
+.header-utilities {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px 0;
+    height: 80px;
+}
+
+.header-nav {
+    position: absolute;
+    right: 40px;
+    transform: translateY(-50%);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header__button {
+    display: inline-block;
+    padding: 2px 18px;
+    background-color: #f4f4f4;
+    border: 1px solid #aba197;
+    color: #aba197;
+    text-decoration: none;
+}
+
+button.header__button {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid #aba197;
+    background-color: #f4f4f4;
+    color: #aba197;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 2px 18px;
+    display: inline-block;
+    cursor: pointer;
+    line-height: 1.2;
+}
+
+body,
+body input,
+body select,
+body textarea,
+body option {
+    color: #aba197;
+    font-weight: normal;
+}

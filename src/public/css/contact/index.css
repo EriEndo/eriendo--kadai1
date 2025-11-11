@@ -1,0 +1,295 @@
+.contact-form__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+}
+
+.contact-form__heading {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 32px;
+    font-family: "Georgia", serif;
+}
+
+.form {
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+}
+
+.form__group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+}
+
+.form__group-title {
+    text-align: left;
+    width: 25%;
+}
+
+.form__group-content {
+    text-align: left;
+    width: 75%;
+}
+
+.form__label--required {
+    color: rgb(254, 85, 85);
+}
+
+.form__input--text input,
+.form__input--number input,
+.form__input--text-select,
+.form__input--textarea textarea {
+    width: 100%;
+    padding: 10px 10px 10px 20px;
+    border: none;
+    border-radius: 3px;
+    background-color: #f4f4f4;
+    height: 40px;
+    appearance: none;
+}
+
+.form__input--textarea textarea {
+    height: 120px; /* 縦textareaだけ高さ変える */
+}
+
+.form__inputs {
+    display: flex;
+    gap: 30px;
+}
+
+.form__input--number input {
+    padding: 10px;
+    text-align: center;
+}
+
+.form__input--text-select {
+    width: 50%;
+    padding: 10px 40px 10px 20px; /* ▼マークのために右側あける */
+    border: none;
+    border-radius: 3px;
+    background-color: #f4f4f4;
+    cursor: pointer;
+
+    /* ▼マークのための設定 */
+    line-height: 1.5;
+    height: 40px; /* 縦中央揃えにするために高さを定める */
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23aba197' height='16' width='16' xmlns='http://www.w3.org/2000/svg'><polygon points='0,0 16,0 8,8'/></svg>");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 12px) calc(50% + 2px);
+    background-size: 12px;
+}
+
+.form__input--radio {
+    margin-right: 60px;
+}
+
+input[type="radio"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid #aba197;
+    background-color: #fff;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked {
+    background-color: #aba197;
+    border-color: #aba197;
+}
+
+.form__button {
+    margin-top: 30px;
+}
+
+.form__button-submit {
+    padding: 10px;
+    width: 15%;
+    height: 40px;
+    border: none;
+    background: #80756c;
+    color: #fff;
+    cursor: pointer;
+}
+
+.form__error {
+    font-size: 12px;
+    height: 15px;
+    color: #ff0000;
+    text-align: left;
+}
+
+/* Pagination設定 */
+
+/* === ページネーション全体 === */
+.pagination nav[role="navigation"] {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    margin-right: 40px;
+
+    font-size: 0;
+}
+
+/* === スマホ用（上の「前」「次」）非表示 === */
+.pagination nav[role="navigation"] > .flex.justify-between.flex-1.sm\:hidden {
+    display: none !important;
+}
+
+/* === 件数表示（"Showing ... results"）非表示 === */
+.pagination nav[role="navigation"] p.text-sm.text-gray-700.leading-5 {
+    display: none !important;
+}
+
+/* === 数字と矢印の基本デザイン === */
+.pagination nav[role="navigation"] a,
+.pagination nav[role="navigation"] span[aria-current="page"],
+.pagination nav[role="navigation"] span[aria-disabled="true"] {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-right: none; /* 隣とくっつける */
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+/* === 一番右の箱だけ右線を戻す === */
+.pagination nav[role="navigation"] a:last-child,
+.pagination nav[role="navigation"] span[aria-current="page"]:last-child {
+    border-right: 1px solid #ccc;
+    border-radius: 0 5px 5px 0;
+}
+
+/* === 現在のページ === */
+.pagination nav[role="navigation"] span[aria-current="page"] {
+    background-color: #aba197;
+    color: #fff;
+    border-color: #aba197;
+}
+
+/* === ホバー時 === */
+.pagination nav[role="navigation"] a:hover {
+    background-color: #f2f2f2;
+}
+
+/* === 矢印（＜ ＞）のサイズ調整（小さく） === */
+.pagination nav[role="navigation"] svg.w-5.h-5 {
+    width: 16px;
+    height: 16px;
+}
+
+/* モーダルの設定 */
+/* ================================
+   CSSだけで動くモーダル
+================================ */
+
+/* モーダル全体（背景含む） */
+.modal-container {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+/* :target がついたとき（表示時） */
+.modal-container:target {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* モーダルの白い本体部分 */
+.modal-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    max-width: 90%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* 閉じるボタン（右上） */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 26px;
+    color: #666;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #000;
+}
+
+/* 詳細ボタン */
+.detail-button {
+    display: inline-block;
+    padding: 5px 12px;
+    background-color: #aba197;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.detail-button:hover {
+    background-color: #938a80;
+}
+
+/* ===== モーダル内テーブル設定 ===== */
+
+.modal-table {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.modal-table th,
+.modal-table td {
+    text-align: left;
+    padding: 10px 10px;
+    vertical-align: top;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.modal-table th {
+    width: 35%;
+}
+.delete-button {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 8px 18px;
+    background-color: #d9534f;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.modal-body form {
+    text-align: center;
+}

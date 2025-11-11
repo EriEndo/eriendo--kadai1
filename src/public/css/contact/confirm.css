@@ -1,0 +1,83 @@
+body,
+body input,
+body select,
+body textarea,
+body option {
+    color: #aba197;
+    font-weight: normal;
+}
+
+.confirm__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+}
+
+.confirm__heading {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 32px;
+    font-family: "Georgia", serif;
+}
+
+.form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+}
+
+.confirm-table {
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+.confirm-table__inner {
+    width: 100%;
+}
+
+.confirm-table__row {
+    height: 40px;
+}
+
+.confirm-table__row:last-child td,
+.confirm-table__row:last-child th {
+    height: 120px;
+}
+
+.confirm-table__header {
+    padding: 15px 15px 15px 30px;
+    width: 30%;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    background-color: #aba197;
+    color: white;
+}
+
+.confirm-table__text {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.confirm-table__text input {
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.form__button {
+    margin: 30px auto;
+    width: 100%;
+    text-align: center;
+}
+
+.form__button-submit {
+    padding: 10px;
+    width: 15%;
+    height: 40px;
+    border: none;
+    background: #80756c;
+    color: #fff;
+    cursor: pointer;
+}

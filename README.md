@@ -1,1 +1,71 @@
-# laravel-docker-template
+# 基礎学習ターム 確認テスト\_お問い合わせフォーム
+
+## 環境構築
+
+**Docker ビルド**
+
+1. `git clone git@github.com:Estra-Coachtech/laravel-docker-template.git`
+2. DockerDesktop アプリを立ち上げる
+3. `docker-compose up -d --build`
+
+**Laravel 環境構築**
+
+1. `docker-compose exec php bash`
+2. `composer install`
+3. 「.env.example」ファイルを コピーして「.env」を作成し、DB の設定を変更
+
+```text
+DB_HOST=mysql
+DB_DATABASE=laravel_db
+DB_USERNAME=laravel_user
+DB_PASSWORD=laravel_pass
+```
+
+4. アプリケーションキーの作成
+
+```bash
+php artisan key:generate
+```
+
+5. マイグレーションの実行
+
+```bash
+php artisan migrate
+```
+
+6. シーディングの実行
+
+```bash
+php artisan db:seed
+```
+
+## 開発環境
+
+- Web アプリ：http://localhost
+- phpMyAdmin：http://localhost:8080/
+
+## URL
+
+- お問い合わせフォーム：http://localhost
+- お問い合わせ確認画面：（POST）/confirm
+- 送信完了画面：（POST 後に遷移）
+- 管理者登録：http://localhost/register
+- 管理者ログイン：http://localhost/login
+- 管理者画面：http://localhost/admin
+- 検索結果画面：http://localhost/search
+- CSV エクスポート：http://localhost/export
+
+## 使用技術(実行環境)
+
+| カテゴリ       | 技術                    | バージョン |
+| -------------- | ----------------------- | ---------- |
+| フレームワーク | Laravel                 | 8.83.8     |
+| 言語           | PHP                     | 8.1.33     |
+| Web サーバ     | Nginx                   | 1.21.1     |
+| データベース   | MySQL                   | 8.0.26     |
+| 管理ツール     | phpMyAdmin              | 最新       |
+| コンテナ環境   | Docker / Docker Compose | 3.8        |
+
+## ER 図
+
+![ER図](src/public/ERD.svg)
