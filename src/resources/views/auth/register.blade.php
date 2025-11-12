@@ -5,7 +5,7 @@
 @endsection
 
 @section('header-nav__auth-action')
-<a href="/login" class="header__button">Login</a>
+<a href="/login" class="header__button">login</a>
 @endsection
 
 @section('content')

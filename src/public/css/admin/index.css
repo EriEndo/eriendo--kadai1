@@ -69,7 +69,7 @@
 
     /* ▼マークのための設定 */
     line-height: 1.5;
-    height: 40px; /* 縦中央揃えにするために高さを定める */
+    height: 40px;
     appearance: none;
     background-image: url("data:image/svg+xml;utf8,<svg fill='%23aba197' height='16' width='16' xmlns='http://www.w3.org/2000/svg'><polygon points='0,0 16,0 8,8'/></svg>");
     background-repeat: no-repeat;
@@ -160,7 +160,6 @@ td {
     cursor: pointer;
 }
 
-/* 詳細ボタン */
 .detail-button {
     display: inline-block;
     padding: 2px 18px;
@@ -172,46 +171,15 @@ td {
 
 .detail-button:hover {
     background-color: #938a80;
+    color: #fff;
 }
 
-/* Pagination設定 */
 .pagination nav[role="navigation"] {
     display: flex;
     justify-content: flex-end;
     margin-top: 20px;
     margin-right: 40px;
     font-size: 0;
-}
-
-.pagination nav[role="navigation"] p.text-sm.text-gray-700.leading-5 {
-    display: none !important;
-}
-
-.pagination nav[role="navigation"] span.sr-only {
-    display: none !important;
-}
-
-.pagination nav[role="navigation"] a,
-.pagination nav[role="navigation"] span[aria-current="page"],
-.pagination nav[role="navigation"] span[aria-disabled="true"] {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-right: none; /* 隣とくっつける */
-    background-color: #fff;
-    color: #aba197;
-    font-size: 16px;
-    text-decoration: none;
-    transition: all 0.2s ease;
-}
-
-.pagination nav[role="navigation"] a:last-child,
-.pagination nav[role="navigation"] span[aria-current="page"]:last-child {
-    border-right: 1px solid #ccc;
-    border-radius: 0 5px 5px 0;
 }
 
 .pagination nav[role="navigation"] span[aria-current="page"] {
@@ -224,16 +192,49 @@ td {
     background-color: #f2f2f2;
 }
 
+/* Pagination デフォルト機能の非表示 */
+.pagination nav[role="navigation"] p.text-sm.text-gray-700.leading-5 {
+    display: none !important;
+}
+
+.pagination nav[role="navigation"] span.sr-only {
+    display: none !important;
+}
+
+.pagination nav[role="navigation"] > div:first-child {
+    display: none !important;
+}
+
+/* Pagination ＜数字＞を囲って並べる */
+.pagination nav[role="navigation"] a,
+.pagination nav[role="navigation"] span[aria-current="page"],
+.pagination nav[role="navigation"] span[aria-disabled="true"] {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-right: none;
+    background-color: #fff;
+    color: #aba197;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.pagination nav[role="navigation"] a:last-child,
+.pagination nav[role="navigation"] span[aria-current="page"]:last-child {
+    border-right: 1px solid #ccc;
+}
+
+/* Pagination 大きさ調整 */
 .pagination nav[role="navigation"] svg.w-5.h-5 {
     width: 20px;
     height: 20px;
     vertical-align: middle;
     position: relative;
     top: -1px;
-}
-
-.pagination nav[role="navigation"] > div:first-child {
-    display: none !important;
 }
 
 /* モーダルの設定 */
@@ -246,7 +247,6 @@ td {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
     transition: opacity 0.3s ease;
     z-index: 1000;
 }
@@ -265,9 +265,9 @@ td {
     width: 600px;
     max-width: 90%;
     background: #fff;
-    border-radius: 10px;
     padding: 30px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border: #80756c 1px solid;
+    box-shadow: 8px 8px 15px -5px rgba(0, 0, 0, 0.3);
 }
 
 .modal-close {
@@ -291,7 +291,8 @@ td {
 }
 
 .modal-close:hover {
-    color: #000;
+    color: #fff;
+    background-color: #80756c;
 }
 
 .modal-table {
@@ -317,6 +318,10 @@ td {
     width: 30%;
 }
 
+.modal-body form {
+    text-align: center;
+}
+
 .delete-button {
     display: inline-block;
     margin-top: 25px;
@@ -328,6 +333,6 @@ td {
     cursor: pointer;
 }
 
-.modal-body form {
-    text-align: center;
+.delete-button:hover {
+    font-weight: bold;
 }

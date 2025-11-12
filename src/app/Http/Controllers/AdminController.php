@@ -20,10 +20,13 @@ class AdminController extends Controller
     public function search(Request $request)
     {
         $contents = Category::all();
+
+        // テーブル繋いで検索絞り込み、8件ずつ表示、検索条件をURLに引き継ぐ
         $contacts = Contact::with('category')
             ->ContactSearch($request->all())
-            ->paginate(7)
+            ->paginate(8)
             ->appends($request->query());
+
         return view('admin.index', compact('contacts', 'contents'));
     }
 

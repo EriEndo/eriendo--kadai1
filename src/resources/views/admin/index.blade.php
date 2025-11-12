@@ -80,7 +80,6 @@
                 <td class="contact-table__item">{{ $contact->email }}</td>
                 <td class="contact-table__item">{{ $contact->category ? $contact->category->content : '未分類' }}</td>
                 <td class="contact-table__item">
-                    {{-- ボタン → aタグに変更 --}}
                     <a href="#modal-{{ $contact->id }}" class="detail-button">詳細</a>
                 </td>
             </tr>

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Contact;
+use Carbon\Carbon;
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,6 +27,7 @@ class DatabaseSeeder extends Seeder
             'building' => '千駄ヶ谷マンション101',
             'category_id' => 2,
             'detail' => "届いた商品が注文した商品ではありませんでした。\n商品の交換をお願いします。",
+            'created_at'    => Carbon::create(2025, 11, 1, 00, 00, 0),
         ]);
 
         Contact::factory()->count(20)->create([
@@ -34,10 +36,11 @@ class DatabaseSeeder extends Seeder
             'gender' => 2,
             'email' => 'coachtech@example.com',
             'tel' => '09011112222',
-            'adress' => '東京都',
-            'building' => 'ビル',
+            'adress' => '東京都港区',
+            'building' => 'オフィスビル202',
             'category_id' => 3,
             'detail' => "届いた商品に汚れがついていました。\n返品と返金をお願いします。",
+            'created_at'    => Carbon::create(2025, 11, 10, 00, 00, 0),
         ]);
     }
 }

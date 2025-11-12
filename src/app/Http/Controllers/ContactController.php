@@ -18,25 +18,19 @@ class ContactController extends Controller
     public function confirm(ContactRequest $request)
     {
         $contact = $request->all();
-
-        // 電話番号結合
         $contact['tel'] = $request->tel1 . $request->tel2 . $request->tel3;
 
-        // 性別は数字のまま保持
+        // 性別は数字のまま保持 表示用ラベル作成
         $gender = $contact['gender'];
-
-        // 表示用ラベルだけ作成
         $genderLabels = [
             1 => '男性',
             2 => '女性',
             3 => 'その他',
         ];
-        $contact['gender_label'] = $genderLabels[$gender] ?? '';
+        $contact['gender_label'] = $genderLabels[$gender];
 
-
-        // カテゴリーの内容取得
-        $category = \App\Models\Category::find($request->input('category_id'));
-        $contact['category_content'] = $category ? $category->content : '';
+        $category = Category::find($request->input('category_id'));
+        $contact['category_content'] = $category->content;
 
         return view('contact/confirm', compact('contact'));
     }
@@ -66,7 +60,12 @@ class ContactController extends Controller
             $contact['tel'] = $tel;
 
             Contact::create($contact);
-            return view('contact/thanks');
+            return redirect('/thanks');
         }
+    }
+
+    public function thanks()
+    {
+        return view('contact.thanks');
     }
 }

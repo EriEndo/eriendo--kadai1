@@ -24,7 +24,10 @@ Route::get('/', [ContactController::class, 'index']);
 
 Route::post('/confirm', [ContactController::class, 'confirm']);
 
+// お問い合わせ登録処理（画面なし）
 Route::post('/contact', [ContactController::class, 'store']);
+
+Route::get('/thanks', [ContactController::class, 'thanks']);
 
 Route::get('/register', [AuthController::class, 'register']);
 

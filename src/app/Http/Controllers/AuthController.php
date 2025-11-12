@@ -35,7 +35,7 @@ class AuthController extends Controller
     {
         $credentials = $request->only('email', 'password');
 
-        $user = \App\Models\User::where('email', $request->email)->first();
+        $user = User::where('email', $request->email)->first();
 
         if (!$user) {
             return redirect('/login')->withErrors([
