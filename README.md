@@ -7,8 +7,8 @@
 #### 1. リポジトリをクローン
 
 ```bash
-git clone git@github.com:EriEndo/eriendo--kadai1.git
-cd eriendo--kadai1
+git clone git@github.com:EriEndo/eriendo-kadai1.git
+cd eriendo-kadai1
 ```
 
 #### 2. Docker の起動
