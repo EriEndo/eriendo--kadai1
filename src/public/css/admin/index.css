@@ -163,7 +163,6 @@ td {
 .detail-button {
     display: inline-block;
     padding: 2px 18px;
-    background-color: #f4f4f4;
     border: 1px solid #aba197;
     color: #aba197;
     text-decoration: none;
@@ -180,16 +179,6 @@ td {
     margin-top: 20px;
     margin-right: 40px;
     font-size: 0;
-}
-
-.pagination nav[role="navigation"] span[aria-current="page"] {
-    background-color: #aba197;
-    color: #fff;
-    border-color: #aba197;
-}
-
-.pagination nav[role="navigation"] a:hover {
-    background-color: #f2f2f2;
 }
 
 /* Pagination デフォルト機能の非表示 */
@@ -214,7 +203,7 @@ td {
     height: 30px;
     line-height: 30px;
     text-align: center;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-right: none;
     background-color: #fff;
     color: #aba197;
@@ -223,9 +212,16 @@ td {
     transition: all 0.2s ease;
 }
 
-.pagination nav[role="navigation"] a:last-child,
-.pagination nav[role="navigation"] span[aria-current="page"]:last-child {
-    border-right: 1px solid #ccc;
+.pagination nav[role="navigation"] > *:last-child {
+    border-right: 1px solid #ddd;
+}
+
+.pagination nav[role="navigation"] span[aria-current="page"],
+.pagination nav[role="navigation"] a:hover,
+.pagination nav[role="navigation"] span[aria-current="page"]:hover {
+    background-color: #938a80;
+    color: #fff;
+    border-color: #938a80;
 }
 
 /* Pagination 大きさ調整 */

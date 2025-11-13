@@ -7,7 +7,7 @@
 @section('header-nav__auth-action')
 <form action="/logout" method="POST">
     @csrf
-    <button class="header__button" type="submit">Logout</button>
+    <button class="header__button" type="submit">logout</button>
 </form>
 @endsection
 
@@ -62,7 +62,7 @@
                 <th class="contact-table__header">性別</th>
                 <th class="contact-table__header">メールアドレス</th>
                 <th class="contact-table__header">お問い合わせの種類</th>
-                <th class="contact-table__header">詳細</th>
+                <th class="contact-table__header"></th>
             </tr>
 
             @foreach ($contacts as $contact)
